@@ -1,0 +1,20 @@
+<h1>Expense Tracker</h1>
+
+<form action="/add" method="POST">
+    Amount: <input name="amount">
+    Category: <input name="category">
+    Type:
+    <select name="type">
+        <option value="expense">Expense</option>
+        <option value="income">Income</option>
+    </select>
+    <button>Add</button>
+</form>
+
+<h2>Total Spent: ₹{{ total }}</h2>
+
+<ul>
+{% for t in transactions %}
+<li>{{ t.category }} - ₹{{ t.amount }}</li>
+{% endfor %}
+</ul>
